@@ -47,11 +47,12 @@ jobs:
           command: |
             flake8 . --count --exit-zero --max-complexity=10 --max-line-length=120 --show-source --statistics --exclude .git,__pycache__,docs/source/conf.py,old,build,dist,env,venv
 
-  Build:
+  Build: # https://circleci.com/blog/how-to-build-a-docker-image-on-circleci-2-0/?utm_source=google&utm_medium=sem&utm_campaign=sem-google-dg--emea-en-dsa-maxConv-auth-brand&utm_term=g_-_c__dsa_&utm_content=&gclid=CjwKCAjwi6WSBhA-EiwA6Niok2HoAhHAhztE1m2a8fQqe7nGhX65uYWpHHMqyKtVXwvVAoTrio_d-hoCBlcQAvD_BwE
     docker:
-      - image: python:3.10-slim-bullseye
+      - image: docker:20.10.14-alpine3.15
     steps:
     - checkout
+    - setup_remote_docker
     - run:
         name: "Build"
         command: |
