@@ -12,6 +12,32 @@ packaging and tests are optional (but always appreciated). This can be done quit
 shortly if you’re on a schedule and stick to the minimum.
 
 
+## Installation
+**Quick installation**:<br/>
+```shell
+make venv
+source venv/Scripts/activate
+```
+
+**Without makefile installation**:<br/>
+```shell
+python -m venv venv
+source venv/Scripts/activate
+pip install -r requirements.txt
+```
+
+## Usage
+
+**Using `python main.py <CITY>`**
+![](https://i.imgur.com/8oo2QIj.png)
+
+**Using `make weather-py CITY=<CITY>`**
+![](https://i.imgur.com/c3y1rvG.png)
+
+**Using `make weather CITY=<CITY>`**
+![](https://i.imgur.com/kiUiqiK.png)
+
+
 ---
 Thibault *Santonja*<br/>
 *2022*

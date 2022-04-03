@@ -3,4 +3,7 @@ from src.open_weather_client import resolve_command
 
 
 if __name__ == '__main__':
+    print("""
+    - Weather forecast -
+    """)
     resolve_command()

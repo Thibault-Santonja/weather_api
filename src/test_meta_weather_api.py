@@ -1,5 +1,7 @@
 from unittest import TestCase
 
+import datetime
+
 from src.meta_weather_api import query_city_metadata, query_city_forecast, query_api
 from src.config import WEATHER_URL
 
@@ -19,9 +21,12 @@ class Test(TestCase):
 
     def test_query_city_forecast(self):
         city_forecast = query_city_forecast(44418)
+        tomorrow = datetime.date.today() + datetime.timedelta(days=1)
+
         self.assertIsInstance(city_forecast, list)
         self.assertGreater(len(city_forecast), 1)
         self.assertIsInstance(city_forecast[0], dict)
+        self.assertEqual(city_forecast[0].get('applicable_date'), tomorrow.strftime('%Y-%m-%d'))
 
     def test_query_api(self):
         url = f"{WEATHER_URL}location/search/"

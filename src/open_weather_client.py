@@ -39,5 +39,5 @@ def get_city_tomorrow_forecast(city: str) -> dict:
     city = query_city_metadata(city)
     city_forecast = query_city_forecast(city.get("woeid"))[0]
 
-    print(f"Tomorrow at {city}, you will have {city_forecast.get('weather_state_name').lower()}.")
+    print(f"Tomorrow at {city.get('title')}, you will have {city_forecast.get('weather_state_name').lower()}.")
     return city_forecast

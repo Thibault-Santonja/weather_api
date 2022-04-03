@@ -1,5 +1,5 @@
 #!/bin/bash
-.PHONY: test run synthax
+.PHONY: integrate build weather weather-py venv
 
 venv:
 	( \
@@ -10,7 +10,20 @@ venv:
 		pip install -r requirements.txt; \
 	)
 
-## CI Scripts
+
+# make dockerize ARGS=London
+weather:
+	docker run thibaultsan/weather-app:latest $(CITY)
+
+weather-py:
+	( \
+		source venv/Scripts/activate; \
+		python main.py $(CITY); \
+	)
+
+################
+## CI scripts ##
+################
 synthax: venv
 	( \
 		source venv/Scripts/activate; \
@@ -28,9 +41,13 @@ test: venv
 		coverage report -m; \
 	)
 
-## Run script
-run: venv
-	( \
-		source venv/Scripts/activate; \
-		python main.py; \
-	)
+integrate: test synthax
+
+
+################
+## CD scripts ##
+################
+build: integrate
+	docker build . --tag thibaultsan/weather-app:latest --label weather-app
+	# docker scan thibaultsan/weather-app:latest
+

@@ -1,3 +1,4 @@
+#!/usr/bin/env python3.10
 import requests
 import json
 import datetime
@@ -48,7 +49,6 @@ def query_api(url: str, parameters: dict = None) -> list:
         exit(request_error)
 
     if len(response) < 1:
-        exit("City not found.")
+        exit("City not found.\nFind your city here : https://www.findmecity.com/")
 
     return response
-
