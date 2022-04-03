@@ -1,9 +1,10 @@
 Build a command line API client
 ===
 
+|                                                                                                        Linter                                                                                                        |                                                                         CI/CD and testing                                                                         |                                                                                                Test Coverage                                                                                                 |
+|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/Thibault-Santonja/weather_api.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Thibault-Santonja/weather_api/context:python) | [![Build Status](https://circleci.com/gh/Thibault-Santonja/weather_api.svg?style=svg)](https://circleci.com/gh/Thibault-Santonja/weather_api) | [![Code Coverage](https://img.shields.io/codecov/c/github/Thibault-Santonja/weather_api.svg?style=for-the-badge)](https://codecov.io/github/Thibault-Santonja/weather_api?branch=master) |
 
-Inspired by [this Medium article](https://medium.com/sicara/perfect-python-command-line-interfaces-7d5d4efad6a2)
-that I want to test, applied for a technical test.
 
 ## Subject
 > Using the Metaweather API, make a command line tool that receives a city name as an
